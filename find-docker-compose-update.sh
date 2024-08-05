@@ -26,14 +26,12 @@ for composes in $(sudo find $dir -type f -name $file)
 do echo "Pulling latest files for $composes"
     dir_path=$(dirname "$composes")
     
-    cd $dir_path && docker compose pull
-    echo "----updating:"$current"----"
-    current=$((current +1))
+    cd $dir_path && docker compose pull 1>> $logs/happy.txt 2>> $logs/not-happy.txt
+    echo "----updating:"$current"----" 1>> $logs/happy.txt && date 1>> $logs/happy.txt
+    current=$((current +1)) 
      
 
 done
 
 echo "-----"
-echo "End"
-
-
+echo "End" 1>> $logs/happy.txt
