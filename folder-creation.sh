@@ -8,7 +8,7 @@ then
 	echo "creating project folders"
 	sudo mkdir -p $location+$project_name
 	sudo chown $USER:$USER $location+$project_name
-	touch "notes.txt" $location+$project_name #making a folder to keep notes, Also testing the permission of non sudo
+	touch "notes.txt" $location+$project_name 
 fi
 echo "Script as come to a end"
 
